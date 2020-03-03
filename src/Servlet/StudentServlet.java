@@ -1,7 +1,6 @@
 package Servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -28,8 +27,7 @@ public class StudentServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		
 		StudentService ss=new StudentServiceImpl();
-		List<Students> list=new ArrayList<Students>();
-				list=ss.ShowAll();
+		List<Students> list=ss.ShowAll();
 		req.setAttribute("list",list);
 		
 		req.getRequestDispatcher("index.jsp").forward(req, resp);
